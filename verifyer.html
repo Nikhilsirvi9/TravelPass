@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifyer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="circle"></div>
+        <div class="triangle"></div>
+    </div>
+    <div class="container">
+        <h1>Verifyer</h1>
+        <button id="connectButton" class="btn-primary" onclick="connectToWallet()">Connect to Wallet</button>
+        <div id="walletAddress" class="output-section"></div>
+
+        <div class="hash-section">
+            <input type="text" id="fileHash" class="input" placeholder="Enter Hash Key">
+            <button class="btn-primary" onclick="checkHash()">Verify Hash</button>
+        </div>
+        <div id="result" class="output-section"></div>
+        <button id="backToLogin" class="btn-back">Back</button>
+        <p id="verifyOutput"></p>
+    </div>
+    <script>
+        document.getElementById('backToLogin').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        document.getElementById('checkDocument').addEventListener('click', () => {
+            const hash = document.getElementById('hashInput').value.trim();
+            if (!hash) {
+                alert('Please enter a hash key!');
+                return;
+            }
+            alert('Checking document with hash: ${hash}');
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

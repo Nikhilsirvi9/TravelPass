@@ -1,0 +1,119 @@
+/* Dynamic Background */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #ff4d4d, #0044ff, #00cc44, #ff9900);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.circle, .triangle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: moveShapes 20s infinite;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  top: 10%;
+  left: 20%;
+  border-radius: 50%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid rgba(255, 255, 255, 0.1);
+  top: 70%;
+  left: 60%;
+}
+
+@keyframes moveShapes {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(31, 31, 31, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  z-index: 1;
+  margin-top: 7rem;
+}
+.container,p1{
+  color: #f0f0f0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Headers */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #444;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #666;
+}
+
+/* Input Fields */
+.input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Output Sections */
+.output-section {
+  margin-top: 10px;
+  text-align: center;
+  color: #f0f0f0;
+}

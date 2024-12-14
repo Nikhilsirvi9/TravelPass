@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Verification</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="background">
+        <div class="circle"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <!-- Wallet Connect Section -->
+        <button id="connectButton" class="btn-primary" onclick="connectToWallet()">Connect to Wallet</button>
+        <div id="walletAddress" class="output-section"></div>
+
+        <!-- File Input Section -->
+        <div class="upload-section">
+            <input type="file" id="fileInput" class="input" onchange="onFileUpload()">
+            <button id="generateHashButton" class="btn-primary" onclick="generateRandomHash()" disabled>Generate Random Hash</button>
+        </div>
+
+        <!-- Hash Input Section -->
+        <div class="hash-section">
+            <input id="fileHash" class="input" type="text" placeholder="Generated Hash" readonly>
+            <button class="btn-primary" onclick="storeHash()">Store Hash</button>
+            <!-- <button class="btn-primary" onclick="checkHash()">Verify Hash</button> -->
+        </div>
+
+        <!-- Result Section -->
+        <div id="result" class="output-section"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
