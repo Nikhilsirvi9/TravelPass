@@ -172,8 +172,8 @@ async function checkHash() {
         // Call the contract method to verify the hash
         const exists = await contract.methods.verifyDocumentHash(hash).call();
         document.getElementById("result").innerText = exists
-            ? "Hash exists in the blockchain!"
-            : "Hash does not exist in the blockchain!";
+            ? "Document Verified!"
+            : "Invalid Document!";
     } catch (error) {
         console.error("Error verifying hash:", error);
         document.getElementById("result").innerText = "Error verifying hash.";
