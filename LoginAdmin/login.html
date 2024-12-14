@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+   
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+    <div class="circle"></div>
+    <div class="triangle"></div>
+</div>
+
+    <!-- Main Login UI -->
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <!-- Login Form Section -->
+        <form id="loginForm">
+            <div class="input-container">
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" id="submit">Login</button>
+        </form>
+        
+        <!-- Error message section -->
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
