@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -19,6 +19,7 @@ const auth = getAuth(app);
 // Form Submission
 const loginForm = document.getElementById("loginForm");
 const errorMessage = document.getElementById("error-message");
+const forgotPasswordLink = document.getElementById("forgot-password");
 
 loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -44,5 +45,22 @@ loginForm.addEventListener("submit", async (event) => {
             errorMessageText = "An error occurred. Please try again.";
     }
     errorMessage.textContent = errorMessageText;
+  }
+});
+
+forgotPasswordLink.addEventListener("click", async () => {
+  const email = document.getElementById("email").value;
+  if (!email) {
+    errorMessage.textContent = "Please enter your email to reset the password.";
+    return;
+  }
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    errorMessage.textContent = "Password reset email sent. Check your inbox 🎉";
+    errorMessage.style.color = "green";
+  } catch (error) {
+    errorMessage.textContent = "Failed to send password reset email. Please try again.";
+    errorMessage.style.color = "red";
   }
 });
