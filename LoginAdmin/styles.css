@@ -272,3 +272,8 @@ button {
 button:hover {
     background-color: #4CAF50;
 }
+.footer{
+    position: absolute;
+    bottom: 1rem;
+    color: white;
+}
